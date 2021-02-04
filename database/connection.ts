@@ -3,11 +3,16 @@ import path from 'path';
 
 
 const db = Knex({
-    client: 'sqlite',
+    client: 'mysql',
     connection: {
-        filename : path.resolve(__dirname,'database.sqlite')
+        host: '172.18.0.2',
+        user: 'root',
+        password: 'Thereva7x',
+        database: 'anemiaPoesias'
     },
-    useNullAsDefault : true
+    migrations: {
+        directory: path.resolve(__dirname, "database", "migrations"),
+    },
 })
 
 export default db;
