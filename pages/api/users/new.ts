@@ -11,7 +11,7 @@ interface userType{
   birthday: Date
 }
 
-const persistUser = async (user:userType) =>{
+const persistUser = async (user:userType) =>{ 
   return await db('users').insert(user)
 }
 
